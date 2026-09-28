@@ -5,11 +5,11 @@ from django.db import models
 class Entreprise(models.Model):
     """Une entreprise succeptible d'acceullire un stagiaire"""
 
-    secteur = {"I": "informatique", "G": "gestion",}
+    secteurs = {"I": "informatique", "G": "gestion",}
 
-    nom = models.CharField(max_length=120, unique=True)
+    nom = models.CharField(max_length=120)
     ville = models.CharField(max_length=80)
-    secteur = models.CharField(max_length=80, choices=secteur)
+    secteur = models.CharField(max_length=80, choices=secteurs)
     contact = models.EmailField()
     email = models.EmailField()
 

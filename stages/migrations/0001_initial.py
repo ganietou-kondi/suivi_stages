@@ -10,6 +10,8 @@ class Migration(migrations.Migration):
     dependencies = [
     ]
 
+
+
     operations = [
         migrations.CreateModel(
             name='Entreprise',
@@ -19,7 +21,7 @@ class Migration(migrations.Migration):
                 ('ville', models.CharField(max_length=80)),
                 ('secteur', models.CharField(max_length=80)),
                 ('contact', models.EmailField(max_length=254)),
-                ('email', models.EmailField(max_length=8)),
+                ('email', models.EmailField()),
             ],
             options={
                 'verbose_name': 'entreprise',
