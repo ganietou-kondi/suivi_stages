@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Entreprise
+from .models.entreprise import Entreprise
 
 @admin.register(Entreprise)
 class EntrepriseAdmin(admin.ModelAdmin):

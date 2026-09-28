@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .models import Entreprise
+from .models.entreprise import Entreprise
 
 
 def liste_entreprises(request):

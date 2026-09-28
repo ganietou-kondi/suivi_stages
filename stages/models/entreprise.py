@@ -5,7 +5,7 @@ from django.db import models
 class Entreprise(models.Model):
     """Une entreprise succeptible d'acceullire un stagiaire"""
 
-    secteurs = {"I": "informatique", "G": "gestion",}
+    secteurs = {"I": "informatique", "G": "gestion",}  # noqa: RUF012
 
     nom = models.CharField(max_length=120)
     ville = models.CharField(max_length=80)
@@ -15,10 +15,10 @@ class Entreprise(models.Model):
 
 
     class Meta:
-        ordering = ["nom"]
+        ordering = ["nom"]  # noqa: RUF012
         verbose_name = "entreprise"
         verbose_name_plural = "entreprises"
-        constraints = [models.UniqueConstraint(fields=["nom", "ville"], name="nom_ville")]
+        constraints = [models.UniqueConstraint(fields=["nom", "ville"], name="nom_ville")]  # noqa: RUF012
 
 
 
