@@ -4,7 +4,11 @@ from .personne import Personne
 
 
 class Tuteur_entreprise(Personne):
-    pass
+    entreprise = models.ForeignKey(
+        "entreprise",
+        on_delete=models.PROTECT,
+        related_name="tuteurs_entreprise"
+    )
 
 
     class Meta(Personne.Meta):

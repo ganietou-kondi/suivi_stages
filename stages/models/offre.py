@@ -1,21 +1,24 @@
 from django.db import models
 
-from .competence import Competence
-
 
 class Offre(models.Model):
     titre = models.CharField(max_length=150)
     description = models.CharField(max_length=150)
-    date_Debut = models.DateField()
+    date_debut = models.DateField()
     date_fin = models.DateField()
-    nb_place = models.IntegerField()
+    nb_places = models.IntegerField()
 
     competence = models.ManyToManyField(
-        Competence, 
-        on_delete = models.SET_NULL,
+        "Competence", 
         related_name= "offre"
     )
 
+    entreprise = models.ForeignKey(
+        "entreprise",
+        on_delete=models.PROTECT,
+        related_name="offres"
+    )
+    
 
     class Meta:
         pass
