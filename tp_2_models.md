@@ -12,19 +12,29 @@ Cela prouve qu'une migration ne suit pas l'organisation de vos fichiers de code 
 # 2- 
 # 2.2 - Ce qu'elle ne dit pas 
 
-* Non personne ne doit pas avoire sa propre table. 
+* Non personne ne doit pas avoire sa propre table. Car la responssable ne demande jamais toutes les personne
+
 * le tuteur  appartien aussi a une entreprise pas seulement au stage qu'il encadre, car c'est l'entreprise qui designe le tuteur qui va suivre le stage
-* OUI, car 2 etudiant peuvent etre accepter a un meme stage si l'entreprise veut plus d'un stgaiare
-Non un stage ne peut pas etre accepter sans candidature, le champs statut au niveau de la base de donnee
 
-* en creant une cle unique netre une offre et un etudiant au niveau de la base de donnee
+* Non, Car une candidature si elle est accepte donne naissance a  un seul stage 
+Non un stage ne peut pas etre accepter sans candidature, car le champ candidature est obligatoire (null=False). la base de donnee le garrantie
 
-* Promotion: un nombre 
+* En creant une cle unique entre une offre et un etudiant, la base de donnee garrantie cette regle pour eviter les doublons
 
-* statut d'une candidature: une liste fermee 
-* On ne peut pas supprimer un etudiant qui a candidater a une offre
-* On ne peut pas supprimmer une offre sur laquelle un etudiant a prise
-* On ne peut pas supprimer un stage qui est un candidature
-* On ne peut pas supprimer une entreprise qui possede au moins un ensignant referant ou un tutuer ou qui a publier des offres
-* On ne peut pas supprimer un tuteur ou un enseignat si il suit un stage 
-* on ne peut pas supprimer une entreprise qui a publié des offres, pour ne pas effacer leur historique »
+* Promotion: un nombre , elle est stockée comme une année numérique afin de pouvoir facilement calculer des statistiques de placement par promotion
+
+* statut d'une candidature: une liste fermee pour éviter les fautes de frappe
+
+La responssable des stages dit On ne perd jamais l’historique d’un stage. 
+
+Donc on évite CASCADE pour les relations historiques importantes.
+
+
+
+* On ne peut pas supprimer un étudiant qui a candidaté à une offre, afin de conserver l’historique des candidatures.
+* On ne peut pas supprimer une offre pour laquelle un étudiant a candidaté, afin de conserver l’historique des candidatures.
+* On ne peut pas supprimer une candidature qui est associée à un stage, afin de conserver l’historique du stage.
+* On ne peut pas supprimer une entreprise qui possède au moins un tuteur ou qui a publié des offres, afin de conserver l’historique.
+* On ne peut pas supprimer un tuteur qui suit un stage, afin de conserver l’historique du stage.
+* On ne peut pas supprimer un enseignant référent qui suit un stage, afin de conserver l’historique du stage.
+
