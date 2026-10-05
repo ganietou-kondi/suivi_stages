@@ -1,0 +1,33 @@
+{% extends "stages/base.html" %}
+{% block titre %}Toutes les offres{% endblock %}
+
+{% block contenu %}
+    <h1>Toutes les offres</h1>
+
+    {% if offres %}
+        <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+            <thead>
+                <tr>
+                    <th>Titre de l'offre</th>
+                    <th>Entreprise</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for offre in offres %}
+                <tr>
+                    <td >{{ offre.titre }}</td>
+                    <td >{{ offre.entreprise.nom }}</td>
+                    <td >
+                        <a href="{% url 'stages:detail_offre' offre.pk %}">Voir le détail</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Aucune offre de stage disponible pour le moment.</p>
+    {% endif %}
+{% endblock %}
+
+

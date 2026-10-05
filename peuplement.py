@@ -38,6 +38,10 @@ etudiant5.competences.add(python, django, css)
 offre1 = Offre.objects.create(titre="Developpeur web Django", description="Developpement d'une application web avec Django.", date_debut="2026-06-01", date_fin="2026-08-31", nb_places=2, entreprise=entreprise1)
 offre2 = Offre.objects.create(titre="Assistant reseau informatique", description="Installation et maintenance des equipements reseau.", date_debut="2026-06-15", date_fin="2026-08-15", nb_places=1, entreprise=entreprise2)
 offre3 = Offre.objects.create(titre="Developpeur frontend", description="Creation d'interfaces web modernes.", date_debut="2026-07-01", date_fin="2026-09-30", nb_places=2, entreprise=entreprise3)
+offre4 = Offre.objects.create(titre="Developpeur Backend Django", description="Developpement d'API REST et gestion des bases de donnees.", date_debut="2026-11-01", date_fin="2027-04-30", nb_places=1, entreprise=entreprise1)
+offre5 = Offre.objects.create(titre="Data Analyst", description="Analyse des donnees utilisateurs et optimisation des requetes SQL.", date_debut="2026-12-15", date_fin="2027-03-15", nb_places=2, entreprise=entreprise2)
+offre6 = Offre.objects.create(titre="Developpeur Fullstack", description="Maintenance de l'application interne, de l'interface au serveur.", date_debut="2027-01-01", date_fin="2027-06-30", nb_places=3, entreprise=entreprise3)
+
 
 offre1.competences.add(python, django, sql)
 offre2.competences.add(sql)

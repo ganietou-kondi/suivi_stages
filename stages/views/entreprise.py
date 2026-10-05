@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .models.entreprise import Entreprise
+from ..models.entreprise import Entreprise
 
 
 def liste_entreprises(request):
@@ -10,3 +10,5 @@ def liste_entreprises(request):
         "stages/liste_entreprises.html",
         {"entreprises": Entreprise.objects.all()},
     )
+
+
