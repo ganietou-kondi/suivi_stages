@@ -8,13 +8,13 @@ class Offre(models.Model):
     date_fin = models.DateField()
     nb_places = models.IntegerField()
 
-    competence = models.ManyToManyField(
+    competences = models.ManyToManyField(
         "Competence", 
         related_name= "offre"
     )
 
     entreprise = models.ForeignKey(
-        "entreprise",
+        "Entreprise",
         on_delete=models.PROTECT,
         related_name="offres"
     )

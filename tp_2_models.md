@@ -38,3 +38,26 @@ Donc on évite CASCADE pour les relations historiques importantes.
 * On ne peut pas supprimer un tuteur qui suit un stage, afin de conserver l’historique du stage.
 * On ne peut pas supprimer un enseignant référent qui suit un stage, afin de conserver l’historique du stage.
 
+# 3
+* a- Il ya 10 table qui ont ete creer 
+Stage_etudiant_competance et Stage_offre_competance je ne les ai pas ecrite 
+Django les crée automatiquement pour gérer tes relations ManyToMany.
+* b- Non il n'y a pas de table personne, Oui c'est cherant avce mon choix de la partie 2 
+
+* c- CREATE TABLE "new__stages_candidature" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "statut" varchar(150) NOT NULL, "date_depot" date NOT NULL, "etudiant_id" bigint NOT NULL REFERENCES "stages_etudiant" ("id") DEFERRABLE INITIALLY DEFERRED, "offre_id" bigint NOT NULL REFERENCES "stages_offre" ("id") DEFERRABLE INITIALLY DEFERRED, CONSTRAINT "offre_etudiant" UNIQUE ("etudiant_id", "offre_id"));
+
+Elle apparait sous forme de contrainte d'unicite
+
+* d- Les règles PROTECT définies dans les modèles sont gérées par Django lors des suppressions effectuées avec l'ORM. Elles n'apparaissent pas sous la forme ON DELETE PROTECT dans le SQL généré. Une suppression effectuée directement en SQL ne passe donc pas par la vérification PROTECT de Django ; elle est alors soumise aux contraintes réellement présentes dans la base de données.
+
+
+# 4
+
+a- Cannot delete entreprise
+Deleting the selected entreprise would require deleting the following protected related objects:
+    Offre: Offre object (1)
+
+Oui c'est ce qu'elle voulais
+
+b- Django aurait autorisé la suppression de l'entreprise.
+Et il aurait également supprimé automatiquement les offres liées à cette entreprise, ainsi que les autres objets dépendants selon les relations CASCADE.

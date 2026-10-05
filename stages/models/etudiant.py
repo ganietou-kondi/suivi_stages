@@ -5,9 +5,9 @@ from .personne import Personne
 
 class Etudiant(Personne):
     matricule = models.CharField(max_length = 150)
-    promotion = models.CharField(max_length=150)
+    promotion = models.IntegerField()
 
-    competence = models.ManyToManyField(
+    competences = models.ManyToManyField(
         "Competence",
         related_name="etudiants"
     )
