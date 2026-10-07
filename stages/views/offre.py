@@ -9,6 +9,6 @@ def liste_offres(request):
 
     return render(
         request,
-        "stages/liste_offre.html",
+        "stages/liste_offres.html",
         {"offres": Offre.objects.all()},
     )

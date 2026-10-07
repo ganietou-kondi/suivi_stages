@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>{% block titre %}Bibliothèque{% endblock %}</title>
+    <title>{% block titre %}offre{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'bibliotheque/style.css' %}">
 </head>
 <body>
     
-    <nav><a href="{% url 'bibliotheque:liste_livres' %}">Livres</a></nav>
+    <nav><a href="{% url 'stages:liste_offres' %}">Livres</a></nav>
     <main>{% block contenu %}{% endblock %}</main>
 
 </body>
