@@ -10,19 +10,26 @@
                 <tr>
                     <th>Titre de l'offre</th>
                     <th>Entreprise</th>
-                    <th>Actions</th>
+                    <th>Date debut</th>
+                    <th>Date fin</th>
+                    <th>Nombre de place</th>
+                    <th>Competences</th>
                 </tr>
             </thead>
             <tbody>
                 {% for offre in offres %}
-                <tr>
-                    <td >{{ offre.titre }}</td>
-                    <td >{{ offre.entreprise.nom }}</td>
-                    <td >
-                        <a>Voir le détail</a>
-
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ offre.titre }}</td>
+                        <td>{{ offre.entreprise.nom }}</td>
+                        <td>{{ offre.date_debut }}</td>
+                        <td>{{ offre.date_fin }}</td>
+                        <td>{{ offre.nb_places }}</td>
+                        <td>
+                            {% for competence in offre.competences.all %}
+                                <div>{{ competence.libelle }}</div>
+                            {% endfor %}
+                        </td>    
+                    </tr>
                 {% endfor %}
             </tbody>
         </table>

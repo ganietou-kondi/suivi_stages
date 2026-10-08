@@ -13,8 +13,8 @@ sql = Competence.objects.create(libelle="Sql")
 css = Competence.objects.create(libelle="css")
 html = Competence.objects.create(libelle="html")
 
-entreprise1 = Entreprise.objects.create(nom="ecobank", ville="Sokodé")
-entreprise2 = Entreprise.objects.create(nom="SheConnect", ville="Sokodé")
+entreprise1 = Entreprise.objects.create(nom="ecobank", ville="Sokode")
+entreprise2 = Entreprise.objects.create(nom="SheConnect", ville="Sokode")
 entreprise3 = Entreprise.objects.create(nom="Atd", ville="Lomé")
 
 tuteur1 = Tuteur_entreprise.objects.create(nom="Koffi", prenom="Jean", sexe="Homme", date_naissance="1985-05-12", email="jean.koffi@example.com", entreprise=entreprise1)
