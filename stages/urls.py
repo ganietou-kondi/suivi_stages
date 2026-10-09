@@ -10,7 +10,7 @@ urlpatterns = [
     path("", views.liste_offres,
     name="liste_offres"),
 
-    path("/detail_offre/<int:pk>/", views.detail_offre,
+    path("detail_offre/<int:pk>/", views.detail_offre,
     name="detail_offre"),
 
 ]

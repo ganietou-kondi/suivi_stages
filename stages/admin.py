@@ -2,14 +2,14 @@ from django.contrib import admin
 
 from .models.candidature import Candidature
 from .models.competence import Competence
-from .models.enseignant_referent import Enseignant_referent
+from .models.enseignant_referent import EnseignantReferent
 
 # Register your models here.
 from .models.entreprise import Entreprise
 from .models.etudiant import Etudiant
 from .models.offre import Offre
 from .models.stage import Stage
-from .models.tuteur_entreprise import Tuteur_entreprise
+from .models.tuteur_entreprise import TuteurEntreprise
 
 
 @admin.register(Entreprise)
@@ -34,7 +34,7 @@ class CompetenceAdmin(admin.ModelAdmin):
     list_display = ["libelle"]  # noqa: RUF012
     search_fields = ["libelle"]  # noqa: RUF012
 
-@admin.register(Enseignant_referent)
+@admin.register(EnseignantReferent)
 class Enseignant_referentAdmin(admin.ModelAdmin):
     list_display = ["nom", "prenom"]  # noqa: RUF012
     search_fields = ["nom", "prenom"]  # noqa: RUF012
@@ -50,7 +50,7 @@ class StageAdmin(admin.ModelAdmin):
     list_display = ["sujet", "tuteur_entreprise", "enseignant_referent"]  # noqa: RUF012
     search_fields = ["sujet"]  # noqa: RUF012
 
-@admin.register(Tuteur_entreprise)
+@admin.register(TuteurEntreprise)
 class Tuteur_entrepriseAdmin(admin.ModelAdmin):
     list_display = ["nom", "prenom", "entreprise"]  # noqa: RUF012
     search_fields = ["nom", "entreprise"]  # noqa: RUF012
