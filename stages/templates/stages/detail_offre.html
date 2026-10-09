@@ -1,0 +1,48 @@
+{% extends "stages/base.html" %}
+{% block titre %}Détail de l'offre : {{ offre.titre }}{% endblock %}
+
+{% block contenu %}
+    <h1>Détail de l'offre : {{ offre.titre }}</h1>
+
+    {% if offre %}
+        <table border="1" style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th>Titre de l'offre</th>
+                    <th>Description</th>
+                    <th>Date début</th>
+                    <th>Date fin</th>
+                    <th>Nombre de places</th>
+                    <th>Compétences requises</th>
+                    <th>Entreprise</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>{{ offre.titre }}</strong></td>
+                    <td>{{ offre.description }}</td>
+                    <td>{{ offre.date_debut|date:"d/m/Y" }}</td>
+                    <td>{{ offre.date_fin|date:"d/m/Y" }}</td>
+                    <td>{{ offre.nb_places }}</td>
+                    <td>
+                        {% for competence in offre.competences.all %}
+                            <span>
+                                {{ competence.libelle }}
+                            </span>
+                        {% empty %}
+                            Pas de compétence spécifique.
+                        {% endfor %}
+                    </td>
+                    <!-- Correction du lien vers la page de l'entreprise -->
+                    <td>
+                        <a href="{% url 'stages:list_entreprises' offre.entreprise.pk %}">
+                            {{ offre.entreprise.nom }}
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <p>Cette offre n'existe pas ou a été supprimée.</p>
+    {% endif %}
+{% endblock %}

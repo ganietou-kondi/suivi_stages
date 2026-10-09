@@ -19,7 +19,7 @@
             <tbody>
                 {% for offre in offres %}
                     <tr>
-                        <td>{{ offre.titre }}</td>
+                        <td><a href="{% url 'stages:detail_offre' offre.pk %}">{{ offre.titre }}</a></td>
                         <td>{{ offre.entreprise.nom }}</td>
                         <td>{{ offre.date_debut }}</td>
                         <td>{{ offre.date_fin }}</td>
