@@ -1,0 +1,38 @@
+{% extends "stages/base.html" %}
+{% block titre %} Liste des entreprises {%endblock%}
+
+{% block contenu %}
+    <h1>Entreprises lie a l'offre {{ offre.titre }} </h1>
+
+    {% if entreprise %} 
+        <table border="1" style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Ville</th>
+                    <th>Secteur</th>
+                    <th>Contacte</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{ entreprise.nom }}</td>
+                        <td>{{ entreprise.ville }}</td>
+                        <td>{{ entreprise.get_secteur_display  }}</td>
+                        <td>{{ entreprise.contact }}</td>
+                        <td>{{ entreprise.email }}</td>
+                        <td>
+                            {% for offre in offre.entreprise.all %}
+                                <div>{{ offre.titre }}</div>
+                            {% endfor %}
+                        </td>    
+                    </tr>
+            </tbody>
+
+        </table>
+    {% else %}
+        <p>Aucune entreprise pour cette offre</p>    
+    {% endif %}    
+{% endblock %}    
+

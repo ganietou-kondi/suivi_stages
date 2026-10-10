@@ -2,49 +2,12 @@
 {% block titre %} Liste des entreprises {%endblock%}
 
 {% block contenu %}
-    <h1>Entreprises a connaitre</h1>
-
-    {% if entreprise %}
-        <table>
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Ville</th>
-                    <th>Secteur</th>
-                    <th>Contacte</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for entreprise in entreprises %}
-                    <tr>
-                        <td>{{ entreprise.nom }}</td>
-                        <td>{{ entreprise.ville }}</td>
-                        <td>{{ entreprise.secteur }}</td>
-                        <td>{{ entreprise.contacte }}</td>
-                        <td>{{ entreprise.email }}</td>
-                        <td>
-                            {% for offre in offre.entreprise.all %}
-                                <div>{{ offre.titre }}</div>
-                            {% endfor %}
-                        </td>    
-                    </tr>
-                {% endfor %}
-            </tbody>
-
-        </table>
-    {% else %}
-        <p>Aucune entreprise pour cette offre</p>    
-    {% endif %}    
-{% endblock %}    
-
-
-
     <ul>
         {% for entreprise in entreprises %}
-            <li>{{ entreprise.nom }} - {{ entreprise.ville }}</li>
+            <li>{{ entreprise.nom }} - {{ entreprise.ville }} {{ entreprise.secteur }}</li>
         {% empty %}
             <li>Aucune entreprise enregistrer pour le moment.</li>
         {% endfor %}        
     </ul>
-   
+
+{% endblock %}

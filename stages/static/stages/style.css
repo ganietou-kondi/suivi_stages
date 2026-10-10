@@ -1,0 +1,97 @@
+/* Design Moderne Pleine Page */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a202c;
+    line-height: 1.6;
+    max-width: 1400px; /* Augmentation de la largeur maximale de la page */
+    margin: 40px auto;
+    padding: 0 30px;
+    background-color: #f8fafc;
+}
+
+h1 { 
+    color: #0f172a; 
+    font-size: 2.25rem; 
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Liens stylisés et interactifs */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+a:hover { 
+    background-color: #dbeafe;
+    color: #1d4ed8; 
+}
+
+/* Tableau XXL épuré et élégant */
+table {
+    width: 100%; /* Prend 100% de la grande largeur */
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 30px 0;
+    border: 1px solid #e2e8f0;
+}
+
+th, td { 
+    padding: 18px 24px; /* Espacement très généreux pour faire respirer les données */
+    text-align: left; 
+}
+
+th {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.75px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+td { 
+    border-bottom: 1px solid #f1f5f9; 
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+/* Effet de surbrillance moderne au survol */
+tr:hover td { 
+    background-color: #f8fafc; 
+    color: #0f172a;
+}
+
+/* Enlever la bordure sur la toute dernière ligne pour garder les coins arrondis propres */
+tr:last-child td { border-bottom: none; }
+
+/* Badges pour les compétences */
+span {
+    background-color: #f1f5f9;
+    color: #334155;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+    margin: 2px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Impression papier propre et contrastée */
+@media print {
+    body { background: white; color: black; max-width: 100%; margin: 0; padding: 0; }
+    table { box-shadow: none; border: 1px solid #94a3b8; width: 100%; }
+    th { background-color: #f1f5f9 !important; border-bottom: 2px solid #94a3b8; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    td { border-bottom: 1px solid #e2e8f0; }
+    a { color: #000; text-decoration: underline; padding: 0; }
+    span { border: 1px solid #94a3b8; background: none !important; }
+}

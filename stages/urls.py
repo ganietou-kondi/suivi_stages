@@ -13,5 +13,8 @@ urlpatterns = [
     path("detail_offre/<int:pk>/", views.detail_offre,
     name="detail_offre"),
 
+    path("entreprise/<int:pk>/", views.detail_entreprise,
+    name="detail_entreprise"),
+
 ]
 

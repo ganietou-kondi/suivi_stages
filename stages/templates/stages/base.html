@@ -3,11 +3,11 @@
 <html lang="fr">
 <head>
     <title>{% block titre %}offre{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'bibliotheque/style.css' %}">
+    <link rel="stylesheet" href="{% static 'stages/style.css' %}">
 </head>
 <body>
     
-    <nav><a href="{% url 'stages:liste_entreprises' %}">Entreprise</a></nav>
+    <nav><a href="{% url 'stages:liste_offres' %}">Offre</a></nav>
     <main>{% block contenu %}{% endblock %}</main>
 
 </body>
